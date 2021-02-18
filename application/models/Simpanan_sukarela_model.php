@@ -10,6 +10,7 @@ class Simpanan_sukarela_model extends CI_Model
               ";
     return $this->db->query($query)->result_array();
   }
+
   public function getSimpananSukarela($id = null)
   {
     if ($id === null) {

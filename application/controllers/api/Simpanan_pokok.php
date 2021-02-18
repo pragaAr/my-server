@@ -21,7 +21,7 @@ class Simpanan_pokok extends REST_Controller
 
     $is_valid_token = $this->authorization_token->validateToken();
     if (!empty($is_valid_token) and $is_valid_token['status'] === TRUE) {
-      $id = $this->get('id');
+      $id = $this->get('id_sim_pokok');
       if ($id === null) {
         $simpokok = $this->Simpanan_pokok_model->getSimpananPokok();
       } else { // Jika terdapat parameter ID

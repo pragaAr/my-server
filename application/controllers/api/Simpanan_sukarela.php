@@ -21,12 +21,12 @@ class Simpanan_sukarela extends REST_Controller
 
     $is_valid_token = $this->authorization_token->validateToken();
     if (!empty($is_valid_token) and $is_valid_token['status'] === TRUE) {
-      $id = $this->get('id');
+      $id = $this->get('id_sukarela');
       if ($id === null) {
         $simSukarela = $this->Simpanan_sukarela_model->getSimpananSukarela();
       } else { // Jika terdapat parameter ID
         $simSukarela = $this->Simpanan_sukarela_model->getSimpananSukarela($id);
-        if (empty($simsimSukarela)) {
+        if (empty($simSukarela)) {
           $this->response([
             'status'  => false,
             'message' => 'id tidak ditemukan'
@@ -83,8 +83,8 @@ class Simpanan_sukarela extends REST_Controller
     if (!empty($is_valid_token) and $is_valid_token['status'] === TRUE) {
       $id             = $this->put('id_sukarela');
       $data = [
-        'anggota_id'        => $this->put('anggota_id     '),
-        'nominal_sukarela'  => $this->put('nominal_sukaa'),
+        'anggota_id'        => $this->put('anggota_id'),
+        'nominal_sukarela'  => $this->put('nominal_sukarela'),
         'tgl_simpan'        => date('Y-m-d H:i:s')
       ];
       if ($this->Simpanan_sukarela_model->updateSimpananSukarela($data, $id) > 0) {

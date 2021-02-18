@@ -21,7 +21,7 @@ class Simpanan_wajib extends REST_Controller
 
     $is_valid_token = $this->authorization_token->validateToken();
     if (!empty($is_valid_token) and $is_valid_token['status'] === TRUE) {
-      $id = $this->get('id');
+      $id = $this->get('id_sim_wajib');
       if ($id === null) {
         $simwajib = $this->Simpanan_wajib_model->getSimpananWajib();
       } else { // Jika terdapat parameter ID

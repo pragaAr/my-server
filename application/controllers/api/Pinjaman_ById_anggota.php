@@ -26,8 +26,6 @@ class Pinjaman_ById_anggota extends REST_Controller
       $id = $this->get('id_anggota');
 
       $anggotaPinjam = $this->Pinjaman_ById_anggota_model->getData($id);
-
-
       $this->response([
         'status'  => true,
         'data'    => $anggotaPinjam
